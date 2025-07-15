@@ -175,18 +175,6 @@ const MainEN = () => {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Technical Sheet</h2>
-            <ul className="list-disc pl-5 text-base opacity-80">
-              <li>Manager: Caio Henrique</li>
-              <li>Strategy started: Nov/2024</li>
-              <li>Market: U.S. Equities</li>
-              <li>Platform: Excent Web Trader</li>
-              <li>Custody: Excent Capital</li>
-              <li>Performance Fee: 30% on monthly profit.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Performance Comparison</h2>
             <div className="w-full">
               <Bar data={barData} options={barOptions} />

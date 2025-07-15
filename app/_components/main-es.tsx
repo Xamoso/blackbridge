@@ -172,18 +172,6 @@ const MainES = () => {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Ficha Técnica</h2>
-            <ul className="list-disc pl-5 text-base opacity-80">
-              <li>Gestor: Caio Henrique</li>
-              <li>Estrategia iniciada: Nov/2024</li>
-              <li>Mercado: Acciones estadounidenses</li>
-              <li>Plataforma: Excent Web Trader</li>
-              <li>Custodia: Excent Capital</li>
-              <li>Tarifa de rendimiento: 30% sobre la ganancia mensual.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Comparación de Rendimiento</h2>
             <div className="w-full">
               <Bar data={barData} options={barOptions} />
