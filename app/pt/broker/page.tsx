@@ -12,7 +12,7 @@ const ExcentPagePT = () => {
             muted
             loop
             playsInline
-            className="w-full h-[200px] object-cover rounded md:h-[200px] h-[150px]"
+            className="w-full h-[120px] md:h-[200px] object-cover rounded"
           />
         </div>
 
