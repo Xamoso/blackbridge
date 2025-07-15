@@ -14,11 +14,9 @@ const ListNavHeaderEN = () => {
         <Link href="/en/insight">
           <li className="text-sm text-white hover:text-[#0097b2]">Insight</li>
         </Link>
-        {/*}
-        <Link href="/en/report">
-          <li className="text-sm text-white hover:text-[#0097b2]">Report</li>
+                <Link href="/en/broker">
+          <li className="text-sm text-white hover:text-[#0097b2]">Exclusive Execution Broker</li>
         </Link>
-        /*}
         {/* <Link href="/en/workshop">
           <li className="text-sm text-white hover:text-yellow-color">Workshop</li>
         </Link> */}

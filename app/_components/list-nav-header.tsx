@@ -23,14 +23,14 @@ const ListNavHeader = () => {
         >
           <li>Insight</li>
         </Link>
-        {/*
+        
         <Link
           className="text-sm text-white transition-all delay-75 hover:text-[#0097b2]"
-          href="/pt/relatorio"
+          href="/pt/broker"
         >
-          <li>Relatório</li>
+          <li>Broker Exclusivo</li>
         </Link>
-        */}
+        
         {/* Ocultado temporariamente - Workshop
         <Link
           className="text-sm text-white transition-all delay-75 hover:text-yellow-color"

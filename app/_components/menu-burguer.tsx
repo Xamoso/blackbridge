@@ -58,9 +58,9 @@ const MenuBurguer = ({ closeMenu }: { closeMenu: () => void }) => {
         <LanguageSwitcherBurger />
       </div>
 
-      {/* Menu de navegação */}
+      {/* Menu de navegação centralizado horizontalmente */}
       <nav
-        className="flex flex-col items-center gap-6 text-lg mt-28"
+        className="flex flex-col items-center justify-center gap-6 text-lg mt-28 w-full text-center"
         onClick={closeMenu}
       >
         {getMenuComponent()}
