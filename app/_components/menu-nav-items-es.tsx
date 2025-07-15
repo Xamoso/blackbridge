@@ -6,7 +6,7 @@ const MenuNavItemsES = () => {
       <li><Link href="/es">Inicio</Link></li>
       <li><Link href="/es/sobre">Sobre</Link></li>
       <li><Link href="/es/perspectiva">Insight</Link></li>
-      <li><Link href="/es/informe">Informe</Link></li>
+ {/*<li><Link href="/es/informe">Informe</Link></li>*/}
       {/* <li><Link href="/es/workshop">Taller</Link></li> */}
     </ul>
   );
