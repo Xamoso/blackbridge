@@ -29,16 +29,14 @@ const ListNavHeader = () => {
           href="/pt/broker"
         >
           <li>Broker Exclusivo</li>
-        </Link>
-        
-        {/* Ocultado temporariamente - Workshop
+        </Link>       
         <Link
           className="text-sm text-white transition-all delay-75 hover:text-yellow-color"
-          href="/workshop"
+          href="/pt/contato"
         >
-          <li>Workshop</li>
+          <li>Contato</li>
         </Link>
-        */}
+        
       </ul>
     </nav>
   );

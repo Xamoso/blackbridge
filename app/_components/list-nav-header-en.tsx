@@ -15,11 +15,11 @@ const ListNavHeaderEN = () => {
           <li className="text-sm text-white hover:text-[#0097b2]">Insight</li>
         </Link>
                 <Link href="/en/broker">
-          <li className="text-sm text-white hover:text-[#0097b2]">Exclusive Execution Broker</li>
+          <li className="text-sm text-white hover:text-[#0097b2]">Execution Broker</li>
         </Link>
-        {/* <Link href="/en/workshop">
-          <li className="text-sm text-white hover:text-yellow-color">Workshop</li>
-        </Link> */}
+        <Link href="/en/contact">
+          <li className="text-sm text-white hover:text-yellow-color">Contact</li>
+        </Link>
       </ul>
     </nav>
   );

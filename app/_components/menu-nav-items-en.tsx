@@ -6,9 +6,8 @@ const MenuNavItemsEN = () => {
       <li><Link href="/en">Home</Link></li>
       <li><Link href="/en/about">About</Link></li>
       <li><Link href="/en/insight">Insight</Link></li>
-      <li><Link href="/en/broker">Exclusive Execution Broker
-</Link></li>
-      {/* <li><Link href="/en/workshop">Workshop</Link></li> */}
+      <li><Link href="/en/broker">Execution Broker</Link></li>
+      <li><Link href="/en/contact">Contact</Link></li>
     </ul>
   );
 };
