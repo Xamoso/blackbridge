@@ -31,7 +31,7 @@ const ListNavHeader = () => {
           <li>Broker Exclusivo</li>
         </Link>       
         <Link
-          className="text-sm text-white transition-all delay-75 hover:text-yellow-color"
+          className="text-sm text-white transition-all delay-75 hover:text-[#0097b2]"
           href="/pt/contato"
         >
           <li>Contato</li>

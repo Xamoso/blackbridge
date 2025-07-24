@@ -18,7 +18,7 @@ const ListNavHeaderEN = () => {
           <li className="text-sm text-white hover:text-[#0097b2]">Execution Broker</li>
         </Link>
         <Link href="/en/contact">
-          <li className="text-sm text-white hover:text-yellow-color">Contact</li>
+          <li className="text-sm text-white hover:text-[#0097b2]">Contact</li>
         </Link>
       </ul>
     </nav>
