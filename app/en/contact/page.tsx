@@ -9,7 +9,7 @@ const ContactPageEN = () => {
     <section className="min-h-screen bg-black text-white px-6 py-32">
       <div className="mx-auto max-w-4xl">
         {/* Title with turquoise word */}
-        <h1 className="text-4xl font-[family-name:var(--font-modani-arabic-bold)] leading-tight text-justify">
+        <h1 className="text-4xl font-[family-name:var(--font-modani-arabic-bold)] leading-tight text-center">
           The first step is also <span style={{ color: "#0097b2" }}>calculated</span>.
         </h1>
 
