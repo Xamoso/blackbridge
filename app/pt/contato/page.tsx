@@ -6,7 +6,7 @@ import { Mail, MessageCircle } from "lucide-react";
 
 const ContatoPagePT = () => {
   return (
-    <section className="min-h-screen bg-black text-white px-6 py-32">
+    <section className="min-h-screen bg-black text-center text-white px-6 py-32">
       <div className="mx-auto max-w-4xl">
         {/* Título com palavra em turquesa */}
         <h1 className="text-4xl font-[family-name:var(--font-modani-arabic-bold)] leading-tight text-justify">
