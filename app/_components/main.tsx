@@ -121,7 +121,7 @@ const Main = () => {
           </p>
 
           <div className="flex w-full max-w-[480px] items-center justify-end">
-            <a className="group/edit text-base" href="/pt/sobre">
+            <a className="group/edit text-base" href="/pt/contato">
               <button className="flex items-center justify-center gap-1 text-center text-[#0097b2]">
                 Saiba mais{" "}
                 <ArrowRight
