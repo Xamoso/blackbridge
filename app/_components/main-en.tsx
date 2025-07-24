@@ -188,7 +188,7 @@ const MainEN = () => {
             </p>
           </div>
 
-          <p className="text-sm text-justify opacity-60">
+          <p className="text-xs text-justify opacity-60" style={{ fontSize: "10px" }}>
             Investments involve risk and may result in losses. Past performance
             is not a guarantee of future returns. The information presented is
             for informational purposes only and does not constitute investment

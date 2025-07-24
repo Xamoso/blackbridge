@@ -187,7 +187,7 @@ const Main = () => {
             </p>
           </div>
 
-          <p className="text-sm text-justify opacity-60">
+          <p className="text-xs text-justify opacity-60" style={{ fontSize: "10px" }}>
             Investimentos envolvem riscos e podem gerar perdas. A performance
             passada não garante retornos futuros. As informações apresentadas
             têm caráter meramente informativo e não constituem recomendação de

@@ -181,7 +181,7 @@ const MainES = () => {
             </p>
           </div>
 
-          <p className="text-sm text-justify opacity-60">
+          <p className="text-xs text-justify opacity-60" style={{ fontSize: "10px" }}>
             Las inversiones implican riesgo y pueden resultar en pérdidas. El rendimiento pasado no garantiza resultados futuros. La información presentada es solo para fines informativos y no constituye asesoramiento financiero.
           </p>
         </div>
