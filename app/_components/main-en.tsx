@@ -43,22 +43,23 @@ const lineData = {
 
 const barData = {
   labels: [
+    "Blackbridge",
+    "BOVA11 (Ibovespa)",
+    "Bloomberg US Aggregate Bond Index",
     "S&P 500 Index",
     "CDI",
-    "BOVA11 (Ibovespa)",
-    "JGP Strategy FIC FIM",
-    "Kadima High VOL FIM",
-    "Bloomberg US Aggregate Bond Index",
-    "Blackbridge",
+    "Câmbio",
+    "BKadima High VOL FIM",
   ],
   datasets: [
     {
       label: "Performance (%)",
-      data: [1.75, 5.15, 17.43, 18.12, 11.28, 1.58, 28.6],
+      data: [28.6, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
       backgroundColor: "#0097b2",
     },
   ],
 };
+
 
 const lineOptions: ChartOptions<"line"> = {
   responsive: true,

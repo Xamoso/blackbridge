@@ -1,0 +1,7 @@
+[
+  { "key": "cdi",          "label": "CDI",                              "currency": "BRL", "ytdReturn": 0.0754 },
+  { "key": "bova11",       "label": "BOVA11 (Ibovespa)",                "currency": "BRL", "ytdReturn": 0.143 },
+  { "key": "jgp_strategy", "label": "S&P 500 Index",                    "currency": "BRL", "ytdReturn": 0.085 },
+  { "key": "kadima_hv",    "label": "Kadima High VOL FIM",              "currency": "BRL", "ytdReturn": -0.033 },
+  { "key": "us_agg",       "label": "Bloomberg US Aggregate Bond Index","currency": "USD", "ytdReturn": 0.039 }
+]
