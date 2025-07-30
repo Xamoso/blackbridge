@@ -43,10 +43,8 @@ function finalValueForInstrument(
   ytdReturn: number,
   fx: FxJSON,
 ) {
-  // 1) Converter A0 para a moeda do instrumento no t0 (via USD como pivô)
   const A0_usd = toUSD(A0_user, userCcy, fx.t0.perUSD);
 
-  // USD -> moeda do instrumento no t0 (se necessário)
   let A0_instrument: number;
   if (instrumentCcy === 'USD') {
     A0_instrument = A0_usd;
@@ -56,10 +54,8 @@ function finalValueForInstrument(
     A0_instrument = A0_usd * perUSD_t0;
   }
 
-  // 2) Aplicar retorno do instrumento
   const A1_instrument = A0_instrument * (1 + ytdReturn);
 
-  // 3) Converter de volta para a moeda do usuário no t1 (via USD)
   let A1_usd: number;
   if (instrumentCcy === 'USD') {
     A1_usd = A1_instrument;
@@ -76,7 +72,7 @@ function finalValueForInstrument(
 export default function Results() {
   const [lead, setLead] = useState<{ amount: number; currency: string; name?: string } | null>(null);
   const [data, setData] = useState<DataJSON | null>(null);
-  const [viewCcy, setViewCcy] = useState<string | null>(null); // moeda de exibição (toggle futuro)
+  const [viewCcy, setViewCcy] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -85,8 +81,9 @@ export default function Results() {
       setLead(ce.detail);
       setViewCcy(ce.detail.currency);
     };
-    window.addEventListener('blackbridge:lead_submitted', onLead as EventListener);
-    return () => window.removeEventListener('blackbridge:lead_submitted', onLead as EventListener);
+    // ✅ sem cast para EventListener
+    window.addEventListener('blackbridge:lead_submitted', onLead);
+    return () => window.removeEventListener('blackbridge:lead_submitted', onLead);
   }, []);
 
   useEffect(() => {
@@ -107,13 +104,9 @@ export default function Results() {
     const { amount: A0, currency: userCcy } = lead;
     const fx = data.fx;
 
-    // 1) Câmbio (USD em caixa)
     const onlyUSD_value = finalValueForInstrument(A0, userCcy, 'USD', 0, fx);
-
-    // 2) Blackbridge
     const bb_value = finalValueForInstrument(A0, userCcy, 'USD', data.blackbridge.ytdReturnUSD, fx);
 
-    // 3) Benchmarks
     const benches = data.benchmarks.map((b) => {
       const v = finalValueForInstrument(A0, userCcy, b.currency, b.ytdReturn, fx);
       return { ...b, finalValue: v, pct: v / A0 - 1 };
