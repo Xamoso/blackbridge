@@ -8,7 +8,9 @@ import {
   BarElement,
   Tooltip,
   Legend,
-  ChartOptions,
+  type ChartOptions,
+  type ChartData,
+  type TooltipItem,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
@@ -35,14 +37,18 @@ export default function BarChart({
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (ctx) => `${ctx.raw}%`,
+          label: (ctx: TooltipItem<'bar'>) => `${String(ctx.raw)}%`,
         },
       },
     },
     scales: {
       x: {
         grid: { color: 'rgba(255,255,255,0.06)' },
-        ticks: { color: 'rgba(229,229,229,0.9)', callback: (v: any) => `${v}%` },
+        // evita "any": a assinatura aceita (value: number|string, index: number, ticks: Tick[]) => string|number
+        ticks: {
+          color: 'rgba(229,229,229,0.9)',
+          callback: (value: number | string) => `${value}%`,
+        },
       },
       y: {
         grid: { display: false },
@@ -51,13 +57,13 @@ export default function BarChart({
     },
   };
 
-  const ds = {
+  const ds: ChartData<'bar'> = {
     labels,
     datasets: [
       {
         data,
         backgroundColor: colors,
-        borderColor: colors,     // mantém o mesmo tom no contorno
+        borderColor: colors, // mantém o mesmo tom no contorno
         borderWidth: 0,
         borderRadius: 6,
         borderSkipped: false,

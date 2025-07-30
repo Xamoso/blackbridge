@@ -2,6 +2,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import type { FormEvent } from 'react';
 
 type LeadPayload = {
   name: string;
@@ -99,7 +100,7 @@ export default function LeadGate() {
     return utm;
   }
 
-  async function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!isFormValid) {
       setErrors({
@@ -129,7 +130,6 @@ export default function LeadGate() {
         ...form,
         phone: e164,
         utm: getUTM(),
-        // @ts-ignore
         honeypot: hp,
       };
 
@@ -295,15 +295,14 @@ export default function LeadGate() {
 
         {/* Ação */}
         <div className="flex items-center gap-3">
-<button
-  type="submit"
-  disabled={loading || !isFormValid}
-  className="px-5 h-10 rounded-lg"
-  style={{ backgroundColor: '#0097b2', color: '#000' }}
->
-  {loading ? 'Calculando...' : 'Calcular'}
-</button>
-
+          <button
+            type="submit"
+            disabled={loading || !isFormValid}
+            className="px-5 h-10 rounded-lg"
+            style={{ backgroundColor: '#0097b2', color: '#000' }}
+          >
+            {loading ? 'Calculando...' : 'Calcular'}
+          </button>
         </div>
       </form>
     </div>

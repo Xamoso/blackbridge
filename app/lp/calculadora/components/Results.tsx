@@ -22,6 +22,8 @@ type DataJSON = {
   blackbridge: { ytdReturnUSD: number };
 };
 
+type LeadSubmittedDetail = { amount: number; currency: string; name?: string };
+
 function toUSD(amount: number, ccy: string, perUSD: Record<string, number>) {
   const rate = perUSD[ccy];
   if (!rate) throw new Error(`FX ausente para ${ccy}`);
@@ -63,7 +65,7 @@ function finalValueForInstrument(
     A1_usd = A1_instrument;
   } else {
     const perUSD_t1 = fx.t1.perUSD[instrumentCcy];
-    if (!perUSD_t1) throw new Error(`FX ausente para ${instrumenCcy}`);
+    if (!perUSD_t1) throw new Error(`FX ausente para ${instrumentCcy}`);
     A1_usd = A1_instrument / perUSD_t1;
   }
 
@@ -78,20 +80,21 @@ export default function Results() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    function onLead(e: any) {
-      setLead(e.detail);
-      setViewCcy(e.detail.currency);
-    }
-    window.addEventListener('blackbridge:lead_submitted', onLead);
-    return () => window.removeEventListener('blackbridge:lead_submitted', onLead);
+    const onLead = (e: Event) => {
+      const ce = e as CustomEvent<LeadSubmittedDetail>;
+      setLead(ce.detail);
+      setViewCcy(ce.detail.currency);
+    };
+    window.addEventListener('blackbridge:lead_submitted', onLead as EventListener);
+    return () => window.removeEventListener('blackbridge:lead_submitted', onLead as EventListener);
   }, []);
 
   useEffect(() => {
     if (!lead) return;
     setLoading(true);
     fetch('/api/data')
-      .then((r) => r.json())
-      .then((json: DataJSON) => setData(json))
+      .then((r) => r.json() as Promise<DataJSON>)
+      .then((json) => setData(json))
       .catch((e) => {
         console.error(e);
         alert('Falha ao carregar dados de mercado.');
