@@ -275,7 +275,7 @@ export default function LeadGate() {
             min={100}
             step={100}
             className={`${input} flex-1`}
-            placeholder="Valor"
+            placeholder="Valor (BRL)"
             value={amountInput}
             onChange={(e) => {
               setAmountInput(e.target.value);
@@ -283,7 +283,7 @@ export default function LeadGate() {
               const n = Number(e.target.value);
               setForm((s) => ({ ...s, amount: Number.isFinite(n) ? n : 0 }));
             }}
-            aria-label="Valor"
+            aria-label="Valo (BRL)"
           />
         </div>
 
