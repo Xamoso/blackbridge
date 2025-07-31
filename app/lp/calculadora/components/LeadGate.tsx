@@ -32,8 +32,6 @@ const COUNTRIES: Country[] = [
   { iso2: 'AR', name: 'Argentina',       dialCode: '54',  flag: '🇦🇷' },
 ];
 
-const currencies = ['BRL', 'USD', 'EUR', 'GBP', 'MXN', 'CLP', 'ARS'] as const;
-
 /* ───── Helpers de validação ───── */
 function isValidName(name: string) {
   const n = (name || '').trim();
@@ -65,12 +63,13 @@ export default function LeadGate() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  // Mantemos currency fixo em BRL no estado "form"
   const [form, setForm] = useState<LeadPayload>({
     name: '',
     email: '',
     phone: '',
-    amount: 5000,
-    currency: 'BRL',
+    amount: 0,          // não pré-preenche na UI
+    currency: 'BRL',    // fixo
     consent: false,
     utm: {},
   });
@@ -84,9 +83,19 @@ export default function LeadGate() {
 
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
 
+  // Valor: estado como string para permitir campo vazio + placeholder
+  const [amountInput, setAmountInput] = useState<string>(''); // começa em branco
+  const amountNumber = useMemo(() => Number(amountInput), [amountInput]);
+  const isAmountValid = amountInput.trim() !== '' && Number.isFinite(amountNumber) && amountNumber >= 100;
+
   const isFormValid = useMemo(
-    () => isValidName(form.name) && isValidEmail(form.email) && isValidE164(e164) && form.consent,
-    [form.name, form.email, form.consent, e164],
+    () =>
+      isValidName(form.name) &&
+      isValidEmail(form.email) &&
+      isValidE164(e164) &&
+      isAmountValid &&
+      form.consent,
+    [form.name, form.email, form.consent, e164, isAmountValid],
   );
 
   function getUTM() {
@@ -116,7 +125,7 @@ export default function LeadGate() {
     if (hp.trim()) {
       // não grava, mas libera resultado (silencia bot)
       window.dispatchEvent(new CustomEvent('blackbridge:lead_submitted', {
-        detail: { amount: form.amount, currency: form.currency, name: form.name },
+        detail: { amount: amountNumber, currency: 'BRL', name: form.name },
       }));
       setSubmitted(true);
       const el = document.getElementById('bb-results');
@@ -128,6 +137,8 @@ export default function LeadGate() {
       setLoading(true);
       const payload: LeadPayload & { honeypot?: string } = {
         ...form,
+        amount: amountNumber,  // usa o número validado
+        currency: 'BRL',       // força BRL
         phone: e164,
         utm: getUTM(),
         honeypot: hp,
@@ -142,7 +153,7 @@ export default function LeadGate() {
 
       // dispara resultados
       window.dispatchEvent(new CustomEvent('blackbridge:lead_submitted', {
-        detail: { amount: form.amount, currency: form.currency, name: form.name },
+        detail: { amount: amountNumber, currency: 'BRL', name: form.name },
       }));
 
       // esconde o card e scroll para resultados
@@ -256,29 +267,24 @@ export default function LeadGate() {
         </div>
         {errors.phone && <p className="text-xs text-red-400 -mt-1">{errors.phone}</p>}
 
-        {/* Valor + Moeda */}
-        <div className="flex gap-2">
+        {/* Valor (BRL fixo) */}
+        <div className="flex">
           <input
             required
             type="number"
             min={100}
             step={100}
             className={`${input} flex-1`}
-            placeholder="Valor para simular"
-            value={form.amount}
-            onChange={(e) => setForm((s) => ({ ...s, amount: Number(e.target.value) }))}
+            placeholder="Valor"
+            value={amountInput}
+            onChange={(e) => {
+              setAmountInput(e.target.value);
+              // mantém form.amount sincronizado quando houver número
+              const n = Number(e.target.value);
+              setForm((s) => ({ ...s, amount: Number.isFinite(n) ? n : 0 }));
+            }}
+            aria-label="Valor"
           />
-          <select
-            className={`${select} w-24`}
-            value={form.currency}
-            onChange={(e) => setForm((s) => ({ ...s, currency: e.target.value }))}
-          >
-            {currencies.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Consentimento */}
@@ -290,7 +296,7 @@ export default function LeadGate() {
             className="h-4 w-4"
             required
           />
-          <span className="text-neutral-300">Autorizo o contato e o tratamento dos meus dados.</span>
+          <span className="text-neutral-300">Aceito receber informações.</span>
         </label>
 
         {/* Ação */}
