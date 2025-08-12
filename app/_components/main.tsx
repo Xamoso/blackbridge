@@ -27,11 +27,11 @@ ChartJS.register(
 );
 
 const lineData = {
-  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul"],
   datasets: [
     {
       label: "Rentabilidade (%)",
-      data: [5, 13, 20, 25, 22.5, 25, 29],
+      data: [5, 13, 20, 25, 22.5, 25, 28.6, 27.6],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -52,7 +52,7 @@ const barData = {
   datasets: [
     {
       label: "Performance (%)",
-      data: [28.6, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
+      data: [27.6, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
       backgroundColor: "#0097b2",
     },
   ],
