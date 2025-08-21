@@ -27,13 +27,13 @@ ChartJS.register(
   Legend
 );
 
-// Data for charts
+// Data for charts (updated until July)
 const lineData = {
-  labels: ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  labels: ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
   datasets: [
     {
       label: "Profitability (%)",
-      data: [5, 13, 20, 25, 22.5, 25, 29],
+      data: [5, 13, 20, 25, 22.5, 25, 29, 28.03],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -54,12 +54,11 @@ const barData = {
   datasets: [
     {
       label: "Performance (%)",
-      data: [28.6, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
+      data: [28.03, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
       backgroundColor: "#0097b2",
     },
   ],
 };
-
 
 const lineOptions: ChartOptions<"line"> = {
   responsive: true,
@@ -154,7 +153,7 @@ const MainEN = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              ["YTD ROI", "28.6%"],
+              ["YTD ROI", "28.03%"],
               ["Monthly Avg", "10.16%"],
               ["Best Month", "20.38%"],
               ["Worst Month", "-3.92%"],
@@ -182,7 +181,7 @@ const MainEN = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               The chart illustrates cumulative performance in 2025, where
-              Blackbridge, with an impressive 28.6%, significantly outperforms
+              Blackbridge, with an updated 28.03%, significantly outperforms
               major market benchmarks. This performance reaffirms our
               differentiated ability to deliver superior returns, outperforming
               traditional alternatives.
