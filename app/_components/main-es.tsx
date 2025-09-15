@@ -16,7 +16,6 @@ import {
 } from "chart.js";
 import { Line, Bar } from "react-chartjs-2";
 
-// Registro de elementos de chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,13 +26,12 @@ ChartJS.register(
   Legend
 );
 
-// Datos de los gráficos
 const lineData = {
-  labels: ["Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul"],
+  labels: ["Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago"],
   datasets: [
     {
       label: "Rentabilidad (%)",
-      data: [5, 13, 20, 25, 22.5, 25, 29, 28.03],
+      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 45.60],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -48,13 +46,12 @@ const barData = {
     "Bloomberg US Aggregate Bond Index",
     "S&P 500 Index",
     "CDI",
-    "Câmbio",
-    "BKadima High VOL FIM",
+    "JGP Strategy FIC FIM",
   ],
   datasets: [
     {
-      label: "Performance (%)",
-      data: [28.03, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
+      label: "Rendimiento (%)",
+      data: [45.60, 18.71, 6.40, 12.00, 9.63, 7.29],
       backgroundColor: "#0097b2",
     },
   ],
@@ -103,7 +100,7 @@ const MainES = () => {
         <VideoBanner />
         <div className="mx-auto mt-20 flex h-full max-w-6xl flex-col items-center justify-center gap-4 px-4 md:mt-8 md:items-start">
           <h4 className="text-base text-white text-justify md:text-start">
-            Reconocer el valor donde es sutil requiere otro tipo de visión.{" "}
+            Reconocer valor donde es sutil requiere otro tipo de visión.{" "}
             <span className="text-[#0097b2]">La tuya.</span>
           </h4>
 
@@ -111,15 +108,14 @@ const MainES = () => {
             Blackbridge se construye sobre{" "}
             <span className="text-[#0097b2]">método</span>,{" "}
             <span className="text-[#0097b2]">claridad</span> y{" "}
-            <span className="text-[#0097b2]">precisión</span>, atributos que
+            <span className="text-[#0097b2]">precisión</span> — atributos que
             resuenan solo en mentes entrenadas para ver más allá de lo{" "}
             <span className="text-[#0097b2]">obvio</span>.
           </h1>
 
           <p className="max-w-[480px] text-justify text-base text-white">
             Estar aquí es un <span className="text-[#0097b2]">privilegio</span>{" "}
-            reservado para quienes entienden que pensar diferente es la primera
-            forma de operar con ventaja.
+            reservado para quienes entienden que pensar diferente es la primera forma de operar con ventaja.
           </p>
 
           <div className="flex w-full max-w-[480px] items-center justify-end">
@@ -137,7 +133,7 @@ const MainES = () => {
       </section>
 
       {/* ESPACIO ADICIONAL ENTRE SECCIONES */}
-      <div className="h-8 md:h-16"></div>
+      <div className="h-8 md:h-16 "></div>
 
       {/* SECCIÓN DE INSIGHTS */}
       <section className="bg-black px-6 py-16 text-white">
@@ -147,26 +143,22 @@ const MainES = () => {
           </h1>
 
           <p className="text-base text-justify opacity-80">
-            Gestionado por un economista activo en el mercado financiero desde
-            2014, especializado en el mercado de acciones de EE.UU. La estrategia
-            de Blackbridge está impulsada por modelos cuantitativos, enfocándose
-            en el análisis de datos y el desarrollo de enfoques estadísticos
-            robustos.
+            Gestionado por un economista activo en el mercado financiero desde 2014,
+            especializado en el mercado de acciones de EE.UU. La estrategia de Blackbridge
+            está impulsada por modelos cuantitativos, enfocándose en el análisis de datos
+            y el desarrollo de enfoques estadísticos robustos.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              ["Rentabilidad YTD", "28.03%"],
-              ["Promedio Mensual", "10.16%"],
-              ["Mejor Mes", "20.38%"],
+              ["ROI Anual", "41.00%"],
+              ["Promedio Mensual", "5.24%"],
+              ["Mejor Mes", "20.10%"],
               ["Peor Mes", "-3.92%"],
-              ["Precisión", "49%"],
+              ["Precisión", "45%"],
               ["Riesgo / Retorno", "1:4"],
             ].map(([label, value]) => (
-              <div
-                key={label}
-                className="rounded border border-[#0097b2] p-4 text-center"
-              >
+              <div key={label} className="rounded border border-[#0097b2] p-4 text-center">
                 <p className="text-sm opacity-70">{label}</p>
                 <p className="text-2xl font-bold">{value}</p>
               </div>
@@ -187,21 +179,17 @@ const MainES = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               El gráfico ilustra el rendimiento acumulado en 2025, donde
-              Blackbridge, con un sólido 28,03%, supera significativamente a los
-              principales índices del mercado. Este resultado reafirma nuestra
+              Blackbridge, con un sólido 45,60%, supera significativamente
+              los principales índices del mercado. Este desempeño reafirma nuestra
               capacidad diferenciada para ofrecer rendimientos superiores,
               superando las alternativas tradicionales.
             </p>
           </div>
 
-          <p
-            className="text-xs text-justify opacity-60"
-            style={{ fontSize: "10px" }}
-          >
+          <p className="text-xs text-justify opacity-60" style={{ fontSize: "10px" }}>
             Las inversiones implican riesgo y pueden resultar en pérdidas. El
             rendimiento pasado no garantiza resultados futuros. La información
-            presentada es solo para fines informativos y no constituye
-            asesoramiento financiero.
+            presentada es solo para fines informativos y no constituye asesoramiento financiero.
           </p>
         </div>
       </section>

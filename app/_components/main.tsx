@@ -27,11 +27,11 @@ ChartJS.register(
 );
 
 const lineData = {
-  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul"],
+  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago"],
   datasets: [
     {
       label: "Rentabilidade (%)",
-      data: [5, 13, 20, 25, 22.5, 25, 29, 28.03],
+      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 45.60],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -46,13 +46,12 @@ const barData = {
     "Bloomberg US Aggregate Bond Index",
     "S&P 500 Index",
     "CDI",
-    "Câmbio",
-    "BKadima High VOL FIM",
+    "JGP Strategy FIC FIM",
   ],
   datasets: [
     {
       label: "Performance (%)",
-      data: [28.03, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
+      data: [45.60, 18.71, 6.40, 12.00, 9.63, 7.29],
       backgroundColor: "#0097b2",
     },
   ],
@@ -152,12 +151,13 @@ const Main = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[["Retorno no Ano", "28.03%"],
-              ["Média Mensal", "10.16%"],
-              ["Melhor Mês", "20.38%"],
+            {[
+              ["Retorno no Ano", "41.00%"],
+              ["Média Mensal", "5.24%"],
+              ["Melhor Mês", "20.10%"],
               ["Pior Mês", "-3.92%"],
-              ["Taxa de Acerto", "49%"],
-              ["Risco / Retorno", "1:4"]
+              ["Taxa de Acerto", "45%"],
+              ["Risco / Retorno", "1:4"],
             ].map(([label, value]) => (
               <div key={label} className="rounded border border-[#0097b2] p-4 text-center">
                 <p className="text-sm opacity-70">{label}</p>
@@ -180,7 +180,7 @@ const Main = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               O gráfico ilustra a performance acumulada em 2025, onde a
-              Blackbridge, com sólidos 28,03%, supera significativamente
+              Blackbridge, com sólidos 45,60%, supera significativamente
               os principais benchmarks de mercado. Esse desempenho reforça nossa
               capacidade diferenciada de entregar retornos superiores,
               superando alternativas tradicionais.

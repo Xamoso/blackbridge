@@ -16,7 +16,6 @@ import {
 } from "chart.js";
 import { Line, Bar } from "react-chartjs-2";
 
-// Register chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,13 +26,12 @@ ChartJS.register(
   Legend
 );
 
-// Data for charts (updated until July)
 const lineData = {
-  labels: ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  labels: ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
   datasets: [
     {
       label: "Profitability (%)",
-      data: [5, 13, 20, 25, 22.5, 25, 29, 28.03],
+      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 45.60],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -48,13 +46,12 @@ const barData = {
     "Bloomberg US Aggregate Bond Index",
     "S&P 500 Index",
     "CDI",
-    "Câmbio",
-    "BKadima High VOL FIM",
+    "JGP Strategy FIC FIM",
   ],
   datasets: [
     {
       label: "Performance (%)",
-      data: [28.03, 14.3, 11.02, 8.52, 7.50, 6.87, -3.31],
+      data: [45.60, 18.71, 6.40, 12.00, 9.63, 7.29],
       backgroundColor: "#0097b2",
     },
   ],
@@ -98,7 +95,7 @@ const barOptions: ChartOptions<"bar"> = {
 const MainEN = () => {
   return (
     <>
-      {/* MAIN HERO SECTION */}
+      {/* MAIN HERO SECTION WITH VIDEO */}
       <section className='h-[800px] bg-[url("/banner-main-m.webp")] bg-cover bg-center bg-no-repeat py-16 md:bg-none'>
         <VideoBanner />
         <div className="mx-auto mt-20 flex h-full max-w-6xl flex-col items-center justify-center gap-4 px-4 md:mt-8 md:items-start">
@@ -134,8 +131,8 @@ const MainEN = () => {
         </div>
       </section>
 
-      {/* SPACER TO AVOID VIDEO OVERLAP */}
-      <div className="h-8 md:h-16"></div>
+      {/* EXTRA SPACING TO AVOID VIDEO CUT */}
+      <div className="h-8 md:h-16 "></div>
 
       {/* INSIGHT SECTION */}
       <section className="bg-black px-6 py-16 text-white">
@@ -153,11 +150,11 @@ const MainEN = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              ["YTD ROI", "28.03%"],
-              ["Monthly Avg", "10.16%"],
-              ["Best Month", "20.38%"],
+              ["YTD ROI", "41.00%"],
+              ["Monthly Avg", "5.24%"],
+              ["Best Month", "20.10%"],
               ["Worst Month", "-3.92%"],
-              ["Accuracy", "49%"],
+              ["Accuracy", "45%"],
               ["Risk / Return", "1:4"],
             ].map(([label, value]) => (
               <div key={label} className="rounded border border-[#0097b2] p-4 text-center">
@@ -181,17 +178,17 @@ const MainEN = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               The chart illustrates cumulative performance in 2025, where
-              Blackbridge, with an updated 28.03%, significantly outperforms
+              Blackbridge, with a solid 45.60%, significantly outperforms
               major market benchmarks. This performance reaffirms our
-              differentiated ability to deliver superior returns, outperforming
-              traditional alternatives.
+              differentiated ability to deliver superior returns,
+              outperforming traditional alternatives.
             </p>
           </div>
 
           <p className="text-xs text-justify opacity-60" style={{ fontSize: "10px" }}>
             Investments involve risk and may result in losses. Past performance
-            is not a guarantee of future returns. The information presented is
-            for informational purposes only and does not constitute investment
+            is not a guarantee of future returns. The information presented
+            is for informational purposes only and does not constitute investment
             advice.
           </p>
         </div>
