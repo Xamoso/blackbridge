@@ -31,7 +31,7 @@ const lineData = {
   datasets: [
     {
       label: "Rentabilidad (%)",
-      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 45.60],
+      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 41.00],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -51,7 +51,7 @@ const barData = {
   datasets: [
     {
       label: "Rendimiento (%)",
-      data: [45.60, 18.71, 6.40, 12.00, 9.63, 7.29],
+      data: [41.00, 18.71, 6.40, 12.00, 9.63, 7.29],
       backgroundColor: "#0097b2",
     },
   ],
