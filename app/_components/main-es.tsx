@@ -179,7 +179,7 @@ const MainES = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               El gráfico ilustra el rendimiento acumulado en 2025, donde
-              Blackbridge, con un sólido 45,60%, supera significativamente
+              Blackbridge, con un sólido 41%, supera significativamente
               los principales índices del mercado. Este desempeño reafirma nuestra
               capacidad diferenciada para ofrecer rendimientos superiores,
               superando las alternativas tradicionales.

@@ -178,7 +178,7 @@ const MainEN = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               The chart illustrates cumulative performance in 2025, where
-              Blackbridge, with a solid 45.60%, significantly outperforms
+              Blackbridge, with a solid 41%, significantly outperforms
               major market benchmarks. This performance reaffirms our
               differentiated ability to deliver superior returns,
               outperforming traditional alternatives.

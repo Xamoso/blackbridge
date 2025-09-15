@@ -180,7 +180,7 @@ const Main = () => {
             </div>
             <p className="text-sm text-justify opacity-60">
               O gráfico ilustra a performance acumulada em 2025, onde a
-              Blackbridge, com sólidos 45,60%, supera significativamente
+              Blackbridge, com sólidos 41%, supera significativamente
               os principais benchmarks de mercado. Esse desempenho reforça nossa
               capacidade diferenciada de entregar retornos superiores,
               superando alternativas tradicionais.
