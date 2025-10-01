@@ -27,11 +27,11 @@ ChartJS.register(
 );
 
 const lineData = {
-  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago"],
+  labels: ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Out"],
   datasets: [
     {
       label: "Rentabilidade (%)",
-      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 41.00],
+      data: [3.70, 9.10, 14.90, 22.00, 18.10, 32.10, 38.40, 37.40, 41.00, 50.00],
       borderColor: "#0097b2",
       backgroundColor: "transparent",
       tension: 0.4,
@@ -51,7 +51,7 @@ const barData = {
   datasets: [
     {
       label: "Performance (%)",
-      data: [41.00, 18.71, 6.40, 12.00, 9.63, 7.29],
+      data: [50.00, 22.50, 6.18, 14.33, 10.29, 7.47],
       backgroundColor: "#0097b2",
     },
   ],
@@ -152,8 +152,8 @@ const Main = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              ["Retorno no Ano", "41.00%"],
-              ["Média Mensal", "5.24%"],
+              ["Retorno no Ano", "50.00%"],
+              ["Média Mensal", "5.89%"],
               ["Melhor Mês", "20.10%"],
               ["Pior Mês", "-3.92%"],
               ["Taxa de Acerto", "45%"],
