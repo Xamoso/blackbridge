@@ -27,7 +27,7 @@ ChartJS.register(
 );
 
 const lineData = {
-  labels: ["Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Oct"],
+  labels: ["Dic", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep"],
   datasets: [
     {
       label: "Rentabilidad (%)",
