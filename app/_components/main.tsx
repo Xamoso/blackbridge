@@ -136,7 +136,10 @@ const Main = () => {
       {/* ESPAÇAMENTO EXTRA PARA NÃO CORTAR O VÍDEO */}
       <div className="h-8 md:h-16 "></div>
 
-      {/* SEÇÃO DE INSIGHTS */}
+      /* ============================================================
+         TUDO A PARTIR DO RELATÓRIO DE PERFORMANCE FOI OCULTADO
+         ============================================================
+
       <section className="bg-black px-6 py-16 text-white">
         <div className="mx-auto max-w-6xl space-y-12">
           <h1 className="text-4xl font-bold text-center">
@@ -195,6 +198,8 @@ const Main = () => {
           </p>
         </div>
       </section>
+
+      ============================================================ */
     </>
   );
 };
